@@ -1,0 +1,63 @@
+.grid-wrap {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+.day {
+    display: grid;
+    grid-auto-rows: 40px;
+}
+.times {
+    background: #D0D0CE;
+}
+.time {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time-tab, .sun-tab, .mon-tab, .tues-tab, .wed-tab, .thur-tab, .fri-tab, .sat-tab  {
+    background: #8E8C89;
+}
+.sun-block {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mon-block {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tues-block {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wed-block {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thur-block {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fri-block {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sat-block {
+    border: solid 1px #275D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
