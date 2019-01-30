@@ -43,7 +43,7 @@ class Header extends Component {
         return (
         <div className="header-wrap">
             <div className='logo'>
-                <img src={UVULogo} alt="uvu logo" class="uvu-logo"/>
+                <img src={UVULogo} alt="uvu logo" className="uvu-logo"/>
             </div>
             <div className='nav'>
                 <Select
