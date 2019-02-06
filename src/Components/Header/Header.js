@@ -23,9 +23,11 @@ class Header extends Component {
                 {value: "Trump", label: 'Trump'},
             ],
             selectedProOption: '',
+            fileURL: ""
         }
         this.handleRoomChange = this.handleRoomChange.bind(this);
         this.handleProChange = this.handleProChange.bind(this);
+        this.handleUploadFile = this.handleUploadFile.bind(this);
     }
 
     handleRoomChange(selectedRoomOption) {
@@ -38,12 +40,39 @@ class Header extends Component {
         console.log(`Option selected:`, selectedProOption);
     }
 
+    handleUploadFile(ev) {
+        ev.preventDefault();
+
+        const data = new FormData();
+        data.append('file', this.uploadInput.files[0]);
+        data.append('filename', this.fileName.value);
+
+        fetch('http://localhost:8000/upload', {method: 'POST', body: data,})
+        .then((res) => {res.json().then((body) => {
+            this.setState({ fileURL: `http://localhost:8000/${body.file}` });
+          });
+        });
+      }
+
     render(){
         const { roomOptions, selectedRoomOption, proOptions, selectedProOption } = this.state;
         return (
         <div className="header-wrap">
             <div className='logo'>
                 <img src={UVULogo} alt="uvu logo" className="uvu-logo"/>
+            </div>
+            <div className="file-upload">
+                <form onSubmit={this.handleUploadFile} className="upload-form">
+                    <div className="upload-input">
+                        <input ref={(ref) => { this.uploadInput = ref; }} type="file"/>
+                    </div>
+                    <div className="file-name">
+                        <input ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Enter the desired name of file" />
+                    </div>
+                    <div className="upload-btn">
+                        <button>Upload</button>
+                    </div>
+                </form>
             </div>
             <div className='nav'>
                 <Select

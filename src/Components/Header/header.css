@@ -19,6 +19,38 @@
   .logo h2 {
     color: white; }
 
+.file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+
+.upload-form {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.upload-input {
+  background: white;
+  width: 100px;
+  margin-right: 10px; }
+  .upload-input input {
+    width: 100px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 4px;
+    font-size: 11pt;
+    cursor: pointer; }
+
+.file-name {
+  margin-right: 5px; }
+
+.upload-btn button {
+  background: green;
+  border-radius: 4px; }
+
 .nav {
   width: 28vw;
   height: 60px;
