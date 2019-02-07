@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './header.css';
 import Select from 'react-select';
 import UVULogo from '../../images/UVU-logo-white.png';
+import { upload } from '../../services/fileUpload.service';
 
 class Header extends Component {
     constructor(props){
@@ -46,16 +47,27 @@ class Header extends Component {
         const data = new FormData();
         data.append('file', this.uploadInput.files[0]);
         data.append('filename', this.fileName.value);
+        console.log(data);
 
-        fetch('http://localhost:8000/upload', {method: 'POST', body: data,})
-        .then((res) => {res.json().then((body) => {
-            this.setState({ fileURL: `http://localhost:8000/${body.file}` });
-          });
+        upload(data).then( res => {
+            res.text().then( body => {
+                this.setState({fileURL: `http://localhost:8000/${body.file}`});
+            });
         });
+
+        // fetch('http://localhost:8000/upload', {
+        //     method: 'POST',
+        //     body: data,
+        // }).then((res) => {
+        //     res.text().then((body) => {
+        //     this.setState({ fileURL: `http://localhost:8000/${body.file}` });
+        //   });
+        // });
       }
 
     render(){
-        const { roomOptions, selectedRoomOption, proOptions, selectedProOption } = this.state;
+        const { roomOptions, selectedRoomOption, proOptions, selectedProOption, fileURL } = this.state;
+        console.log(fileURL);
         return (
         <div className="header-wrap">
             <div className='logo'>
