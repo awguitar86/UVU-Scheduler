@@ -21,19 +21,19 @@ class CoursesItem extends Component {
         console.log(this.props);
         return (
             <div className="courses-item-wrap">
-                <p>{CRN}</p>
-                <p>{Term}</p>
-                <p>{Course}</p>
-                <p>{Section}</p>
-                <p>{CourseTitle}</p>
-                <p>{ScheduleType}</p>
-                <p>{Title}</p>
-                <p>{MeetingPattern}</p>
-                <p>{Instructor}</p>
-                <p>{BuildingAndRoom}</p>
-                <p>{PartOfTerm}</p>
-                <p>{CreditHours}</p>
-                <p>{MaxEnroll}</p>
+                <p><strong>CRN:</strong> {CRN}</p>
+                <p><strong>Term:</strong> {Term}</p>
+                <p><strong>Course:</strong> {Course}</p>
+                <p><strong>Section:</strong> {Section}</p>
+                <p><strong>Course Title:</strong> {CourseTitle}</p>
+                <p><strong>Schedule Type:</strong> {ScheduleType}</p>
+                <p><strong>Title:</strong> {Title}</p>
+                <p><strong>Meeting Pattern:</strong> {MeetingPattern}</p>
+                <p><strong>Instructor:</strong> {Instructor}</p>
+                <p><strong>Building and Room:</strong> {BuildingAndRoom}</p>
+                <p><strong>Part of Term:</strong> {PartOfTerm}</p>
+                <p><strong>Credit Hours:</strong> {CreditHours}</p>
+                <p><strong>Max Enroll:</strong> {MaxEnroll}</p>
             </div>
         )
     }

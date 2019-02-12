@@ -2,6 +2,7 @@
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    position: fixed;
 }
 .day {
     display: grid;
